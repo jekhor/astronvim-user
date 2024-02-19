@@ -19,17 +19,17 @@ return {
     -- },
 
     -- mappings seen under group name "Buffer"
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
-      desc = "Pick to close",
-    },
+    --["<leader>bD"] = {
+    --  function()
+    --    require("astronvim.utils.status").heirline.buffer_picker(
+    --      function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+    --    )
+    --  end,
+    --  desc = "Pick to close",
+    --},
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
-    ["<leader>b"] = { name = "Buffers" },
+    --["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
@@ -37,4 +37,10 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  --c = {
+  --  ["<Up>"] = {'wildmenumode() ? "<Left>" : "<Up>"', expr = true, noremap=true},
+  --  ["<Down>"] = {'wildmenumode() ? "<Right>" : "<Down>"', expr = true, noremap=true},
+  --  ["<Left>"] = {'wildmenumode() ? "<Up>" : "<Left>"', expr = true, noremap=true},
+  --  ["<Right>"] = {'wildmenumode() ? "<Down>" : "<Right>"', expr = true, noremap=true},
+  --},
 }
