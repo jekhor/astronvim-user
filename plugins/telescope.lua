@@ -5,17 +5,17 @@ return {
   commit = "origin/HEAD",
   opts = {
     defaults = {
+      layout_config = {
+        scroll_speed = 1
+      },
       mappings = {
         i = {
           ["<M-Up>"] = actions.preview_scrolling_up,
           ["<M-Down>"] = actions.preview_scrolling_down,
-          ["<C-i>"] = actions.preview_scrolling_down,
-          ["<C-d>"] = actions.preview_scrolling_down,
         },
         n = {
           ["<M-Up>"] = actions.preview_scrolling_up,
           ["<M-Down>"] = actions.preview_scrolling_down,
-          ["<C-i>"] = actions.preview_scrolling_down,
         }
       }
     },
@@ -30,7 +30,7 @@ return {
           get_command = function(entry)
             return {
               "git",
-              -- "--no-pager",
+              "--no-pager",
               "log",
               --"--graph",
               "--max-count=1000",
@@ -41,17 +41,17 @@ return {
               entry.value,
             }
           end,
-          -- scroll_fn = function(self, direction)
-          --   if not self.state then return end
-          --
-          --   local input = direction > 0 and [[�]] or [[�]]
-          --   local count = math.abs(direction)
-          --
-          --   vim.api.nvim_buf_call(
-          --     self.state.termopen_bufnr,
-          --     function() vim.cmd([[normal! ]] .. count .. input) end
-          --   )
-          -- end,
+          scroll_fn = function(self, direction)
+            if not self.state then return end
+
+            local input = direction > 0 and [[]] or [[]]
+            local count = math.abs(direction)
+
+            vim.api.nvim_buf_call(
+              self.state.termopen_bufnr,
+              function() vim.cmd([[normal! ]] .. count .. input) end
+            )
+          end,
         }),
       },
     }

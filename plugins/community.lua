@@ -11,4 +11,5 @@ return {
   { import = "astrocommunity.colorscheme.sonokai" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+  { import = "astrocommunity.editing-support.refactoring-nvim" },
 }
