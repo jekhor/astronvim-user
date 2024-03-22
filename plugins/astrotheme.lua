@@ -102,6 +102,7 @@ return {
         ["@property"] = { fg = "gray90", bg = "NONE" },
         ["@lsp.typemod.variable.readonly.c"] = { fg = "gray90", bg = "NONE" },
         ["@lsp.typemod.label.declaration.c"] = { fg = "khaki", bg = "NONE"},
+        ["cLabel"] = { fg = "khaki" },
         ["CopilotSuggestion"] = { fg = "gray50" },
         ["CopilotAnnotation"] = { fg = "gray50" },
       },
